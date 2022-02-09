@@ -13,6 +13,7 @@
 		67820BB727B23C820073AFCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67820BB527B23C820073AFCE /* Main.storyboard */; };
 		67820BB927B23C820073AFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67820BB827B23C820073AFCE /* Assets.xcassets */; };
 		67820BBC27B23C820073AFCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67820BBA27B23C820073AFCE /* LaunchScreen.storyboard */; };
+		67820BC427B2B3C90073AFCE /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 67820BC327B2B3C90073AFCE /* sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		67820BB827B23C820073AFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67820BBB27B23C820073AFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67820BBD27B23C820073AFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67820BC327B2B3C90073AFCE /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = ../../../../Downloads/proj_1_assets/sound.dataset/sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		67820BAE27B23C820073AFCE /* iOS_MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				67820BC327B2B3C90073AFCE /* sound.mp3 */,
 				67820BAF27B23C820073AFCE /* AppDelegate.swift */,
 				67820BB127B23C820073AFCE /* SceneDelegate.swift */,
 				67820BB327B23C820073AFCE /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67820BC427B2B3C90073AFCE /* sound.mp3 in Resources */,
 				67820BBC27B23C820073AFCE /* LaunchScreen.storyboard in Resources */,
 				67820BB927B23C820073AFCE /* Assets.xcassets in Resources */,
 				67820BB727B23C820073AFCE /* Main.storyboard in Resources */,
