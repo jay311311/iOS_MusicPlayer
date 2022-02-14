@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bN-ag-0jU">
-                                <rect key="frame" x="103" y="335" width="211" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bN-ag-0jU">
+                                <rect key="frame" x="120" y="335" width="174" height="189"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="button_play"/>
                                 <state key="selected" image="button_pause"/>
@@ -26,23 +25,22 @@
                                     <action selector="touchPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTt-1v-hRM"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TmP-UY-IDg">
-                                <rect key="frame" x="73" y="565" width="273" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TmP-UY-IDg">
+                                <rect key="frame" x="78" y="565" width="258" height="31"/>
                                 <connections>
+                                    <action selector="dragEndSlider:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TdX-mr-phF"/>
+                                    <action selector="dragStartSlider:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="b3E-cd-k0e"/>
                                     <action selector="moveSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="bBa-DO-d65"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBg-mo-fvx">
-                                <rect key="frame" x="57" y="601" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBg-mo-fvx">
+                                <rect key="frame" x="80" y="601" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uF-rZ-0qs">
-                                <rect key="frame" x="255" y="602" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uF-rZ-0qs">
+                                <rect key="frame" x="288" y="602" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,6 +48,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TmP-UY-IDg" secondAttribute="trailing" constant="80" id="2BN-do-mHL"/>
+                            <constraint firstItem="NBg-mo-fvx" firstAttribute="top" secondItem="TmP-UY-IDg" secondAttribute="bottom" constant="6" id="Qnn-vE-NhN"/>
+                            <constraint firstItem="1bN-ag-0jU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RS0-2q-8QP"/>
+                            <constraint firstItem="TmP-UY-IDg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SKk-ee-sUc"/>
+                            <constraint firstItem="TmP-UY-IDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="aRL-XR-fHe"/>
+                            <constraint firstItem="1bN-ag-0jU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="291" id="eN4-JI-9xS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1bN-ag-0jU" secondAttribute="trailing" constant="120" id="eSC-wX-IFg"/>
+                            <constraint firstItem="2uF-rZ-0qs" firstAttribute="top" secondItem="TmP-UY-IDg" secondAttribute="bottom" constant="7" id="ejT-lM-URU"/>
+                            <constraint firstItem="TmP-UY-IDg" firstAttribute="top" secondItem="1bN-ag-0jU" secondAttribute="bottom" constant="41" id="got-kj-emM"/>
+                            <constraint firstItem="NBg-mo-fvx" firstAttribute="leading" secondItem="TmP-UY-IDg" secondAttribute="leading" id="hnB-ra-fzU"/>
+                            <constraint firstItem="2uF-rZ-0qs" firstAttribute="trailing" secondItem="TmP-UY-IDg" secondAttribute="trailing" id="m8j-Mv-HKE"/>
+                            <constraint firstItem="1bN-ag-0jU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="xQC-zl-ZZH"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playAllTime" destination="2uF-rZ-0qs" id="8Xm-VZ-omG"/>
