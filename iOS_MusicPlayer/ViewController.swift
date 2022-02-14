@@ -11,64 +11,53 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var playBtn : UIButton!
-    @IBOutlet weak var playTime : UILabel!
+    @IBOutlet weak var playCurrentTime : UILabel!
     @IBOutlet weak var playAllTime : UILabel!
     @IBOutlet weak var playSlider : UISlider!
     
     var url = Bundle.main.url(forResource: "sound", withExtension: "mp3")
     var audioPlayer : AVAudioPlayer?
     var playState : Bool?
-    var playDuration : Double?
-    var playingAllTime:String?
-
+    var playCurrent : Double?
+    var timer : Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPlayer()
-        // Do any additional setup after loading the view.
     }
     
     func loadPlayer (){
         // AVAudioPlayer 에 url 넣으려면 do catch 문 안에서 try throw 를 사용해야한다
-   
-        
         if let urlFile = url {
             do{
                 audioPlayer = try AVAudioPlayer(contentsOf: urlFile)
-                print("ready to play")
-                audioPlayer?.play()
-                playBtn?.isSelected = true
-                playDuration = audioPlayer?.duration
-                guard let durationTime = playDuration else { return }
-                playingAllTime = showPlayingSecond(durationTime)
-                playAllTime.text = playingAllTime
-                
-               // playCurrent = audioPlayer?.currentTime
-                
-//                playCurrent = audioPlayer?.currentTime
-//                guard let currentTime = playCurrent else { return }
-//                playingCurrentTime = showPlayingSecond(currentTime)
-//                playTime.text = playingCurrentTime
-   
             }catch let error as NSError{
                 print("i made \(error)")
             }
         }
+    
+        playBtn?.isSelected = true
+        playAllTime.text =  secondsToString(sec : audioPlayer?.duration)
+        audioPlayer?.play()
         
-       
+        if audioPlayer?.isPlaying  == true{
+            timer =  Timer.scheduledTimer(withTimeInterval: 0, repeats: true, block:{ (_)  in
+                self.playCurrentTime.text = self.secondsToString(sec : self.audioPlayer?.currentTime)
+                if self.playCurrentTime.text == self.playAllTime.text{
+                    self.playBtn?.isSelected = false
+                }
+            })
+        }
+    }
+    
 
+    func secondsToString(sec: TimeInterval?) -> String {
+        guard let Time = sec else { return "00:00" }
+        let totalSeconds = Int(Time)
+        let min = totalSeconds / 60
+        let seconds = totalSeconds % 60
+        return String(format: "%02d:%02d", min, seconds)
     }
-    
-    func showPlayingSecond (_ durations : Double) -> String{
-        let min = Int(durations / 60)
-        let sec  = Int(durations)
-        let playingTime: String = "\(String(format: "%02d", min)):\(String(format: "%02d", sec))"
-        return playingTime
-    }
-    
-    
-    
-    
     
     
     @IBAction func touchPlayBtn(_ sender: UIButton) -> Void {

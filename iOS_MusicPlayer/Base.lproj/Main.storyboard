@@ -54,8 +54,8 @@
                     <connections>
                         <outlet property="playAllTime" destination="2uF-rZ-0qs" id="8Xm-VZ-omG"/>
                         <outlet property="playBtn" destination="1bN-ag-0jU" id="fvd-MI-k4Y"/>
+                        <outlet property="playCurrentTime" destination="NBg-mo-fvx" id="VzA-NO-YiD"/>
                         <outlet property="playSlider" destination="TmP-UY-IDg" id="FRD-O5-8q5"/>
-                        <outlet property="playTime" destination="NBg-mo-fvx" id="gTf-EA-Px0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
